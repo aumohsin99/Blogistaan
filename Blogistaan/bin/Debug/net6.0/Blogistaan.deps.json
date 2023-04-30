@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Blogistaan/1.0.0": {
+        "runtime": {
+          "Blogistaan.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Blogistaan/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
