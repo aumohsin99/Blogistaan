@@ -1,4 +1,4 @@
-﻿@model Blogistaan.Models.User
+﻿@model Blogistaan.Models.Writer
 
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -6,15 +6,15 @@
 @{
 }
 @{
-    ViewBag.Title = "User Login";
+    ViewBag.Title = "Writer Login";
 }
 
 <div class="container my-5">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h2>User Login</h2>
+            <h2>Writer Login</h2>
             @Html.ValidationSummary()
-            @using (Html.BeginForm("UserLogin", "Account", FormMethod.Post, new { @class = "form" }))
+            @using (Html.BeginForm("WriterLogin", "Accounts", FormMethod.Post, new { @class = "form" }))
             {
                 <div class="form-group">
                     @Html.LabelFor(m => m.Username)
@@ -27,7 +27,7 @@
                     @Html.ValidationMessageFor(m => m.Password)
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
-                <a href="@Url.Action("AdminLogin", "Accounts")" class="btn btn-link">Admin Login</a>
+                <a href="@Url.Action("AdminLogin", "Login")" class="btn btn-link">Admin Login</a>
             }
         </div>
     </div>

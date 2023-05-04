@@ -3,7 +3,7 @@
 
 namespace Blogistaan.Models
 {
-    public class User
+    public class Writer
     {
         public int Id { get; set; }
 

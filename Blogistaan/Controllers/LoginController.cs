@@ -2,9 +2,9 @@
 
 namespace Blogistaan.Controllers
 {
-    public class AccountsController : Controller
+    public class LoginController : Controller
     {
-        public IActionResult Login()
+        public IActionResult WriterLogin()
         {
             return View();
         }
