@@ -8,5 +8,20 @@ namespace Blogistaan.Controllers
         {
             return View();
         }
+
+        public IActionResult AddWriter()
+        {
+            return View();
+        }
+
+        public IActionResult UpdateWriter()
+        {
+            return View();
+        }
+
+        public IActionResult DeleteWriter()
+        {
+            return View();
+        }
     }
 }
