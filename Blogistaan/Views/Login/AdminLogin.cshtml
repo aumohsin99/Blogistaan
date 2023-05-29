@@ -16,7 +16,7 @@
         <div class="col-md-6 offset-md-3">
             <h2>Admin Login</h2>
             @Html.ValidationSummary()
-            @using (Html.BeginForm("AdminLogin", "Accounts", FormMethod.Post, new { @class = "form" }))
+            @using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post, new { @class = "form" }))
             {
                 <div class="form-group">
                     @Html.LabelFor(m => m.Username)

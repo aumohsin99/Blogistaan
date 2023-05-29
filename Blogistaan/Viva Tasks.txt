@@ -11,3 +11,4 @@ EF Pattern (Siginin/Up) only
 
 
 Remove images, add link of blogs in home page for all blogs
+Avoid showing dashboards without logging in for both admin and writer
