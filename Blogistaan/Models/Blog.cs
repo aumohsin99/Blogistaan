@@ -3,7 +3,7 @@ using System;
 
 namespace Blogistaan.Models
 {
-
+    
     public class Blog
     {
         public int Id { get; set; }

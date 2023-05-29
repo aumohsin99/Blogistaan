@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Blogistaan.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Blogistaan.Controllers
 {
     public class WriterController : Controller
     {
+
         public IActionResult Dashboard()
         {
+
             return View();
         }
 

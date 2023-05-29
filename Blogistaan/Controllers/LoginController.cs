@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Blogistaan.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Blogistaan.Controllers
 {
     public class LoginController : Controller
     {
+
+      
+
         public IActionResult WriterLogin()
         {
             return View();

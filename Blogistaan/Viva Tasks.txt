@@ -1,7 +1,13 @@
-100% Views
-Partial Views
-Cookies (state management)
-Layout
+100% Views already done in First Project Viva
+Partial View done in Menu Bar
+
+
+Cookies (state management) TBD
+Layout TBD
+
 Controller (Action Methods)
 Repo pattern for DB Tasks (Siginin/Up) action methods in User class only
 EF Pattern (Siginin/Up) only
+
+
+Remove images, add link of blogs in home page for all blogs
