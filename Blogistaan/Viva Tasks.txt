@@ -1,0 +1,7 @@
+100% Views
+Partial Views
+Cookies (state management)
+Layout
+Controller (Action Methods)
+Repo pattern for DB Tasks (Siginin/Up) action methods in User class only
+EF Pattern (Siginin/Up) only
