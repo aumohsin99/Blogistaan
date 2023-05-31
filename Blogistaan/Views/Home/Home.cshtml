@@ -16,7 +16,11 @@
        @*   <img src="@Url.Content("~/Media/logo.png")" alt="Blogistaan Logo" class="img-fluid rounded-circle">
             <img src="@Url.Content("D:/Web Tasks/Blogistaan/Blogistaan/Media/logo.png")" alt="Blogistaan Logo" class="img-fluid rounded-circle">
        *@
-            <img src="https://via.placeholder.com/300x300.png?text=Blogistaan+Logo" class="img-fluid rounded-circle">
+
+
+@*            <img src="https://via.placeholder.com/300x300.png?text=Blogistaan+Logo" class="img-fluid rounded-circle">
+*@
+
       </div>
     </div>
 </div>
@@ -40,8 +44,8 @@
             {
                 <div class="col-md-4 mb-3">
                     <div class="card h-100">
-                        <img src="@post.ImageUrl" class="card-img-top" alt="...">
-                        <div class="card-body">
+@*                        <img src="@post.ImageUrl" class="card-img-top" alt="...">
+*@                        <div class="card-body">
                             <h5 class="card-title">@post.Title</h5>
                             <p class="card-text">@post.Content</p>
                             <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Blog" asp-route-id="@post.Id">Read More</a>
@@ -55,7 +59,9 @@
 </div>
 
 
-<div class="container">
+
+
+@*<div class="container">
     <div class="row">
         <div class="col-md-12">
             <h2 class="mb-3">Latest Posts Hardcoded</h2>
@@ -94,4 +100,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@

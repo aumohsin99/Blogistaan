@@ -13,3 +13,6 @@ EF Pattern (Siginin/Up) only
 Remove images, add link of blogs in home page for all blogs
 Avoid showing dashboards without logging in for both admin and writer
 implement cookies in user login to avoid logging in users again during a session
+
+In writer dashboard, only show those blogs that have been written by that writer
+Add name of writer at the end of blog just for demo

@@ -1,12 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Blogistaan.Repository;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Blogistaan.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public IActionResult Home()
         {
-            return View();
+
+            var writerreop = new WriterRepo();
+            var listofBlogs = writerreop.FetchAllBlogs();
+
+            return View(listofBlogs);
+            //return View();
         }
 
         public IActionResult Privacy()

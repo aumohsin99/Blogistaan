@@ -26,6 +26,7 @@ namespace Blogistaan.Repository
 
         public List<Blog> FetchAllBlogs()
         {
-            return dbContext.Blogs.ToList();        }
+            return dbContext.Blogs.ToList();        
+        }
     }
 }
