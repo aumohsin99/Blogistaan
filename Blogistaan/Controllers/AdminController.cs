@@ -1,12 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Blogistaan.Repository;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Blogistaan.Controllers
 {
     public class AdminController : Controller
     {
+        [HttpGet]
         public IActionResult Dashboard()
         {
-            return View();
+            var adminrepo = new AdminRepo();
+            var listofWriters = adminrepo.FetchAllWriters();
+
+            return View(listofWriters);
         }
 
         public IActionResult AddWriter()

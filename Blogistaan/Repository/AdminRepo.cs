@@ -23,6 +23,12 @@ namespace Blogistaan.Repository
             //return dbContext.Writers.Any(x => x.Va)
         }
 
+        public List<Writer> FetchAllWriters ()
+        {
+
+            return dbContext.Writers.ToList();
+        }
+
 
 
     }
