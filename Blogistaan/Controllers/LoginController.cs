@@ -1,4 +1,5 @@
 ﻿using Blogistaan.Models;
+using Blogistaan.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
@@ -6,6 +7,12 @@ namespace Blogistaan.Controllers
 {
     public class LoginController : Controller
     {
+        WriterRepo writerrepo;
+
+        public LoginController(ContextClass dbContext)
+        {
+            writerrepo = new WriterRepo(dbContext);
+        }
 
 
         [HttpGet]
@@ -17,12 +24,12 @@ namespace Blogistaan.Controllers
         [HttpPost]
         public IActionResult WriterLogin(Writer writerobj)
         {
+
             // Handle login logic here
-            if (writerobj.Username == "w1" && writerobj.Password=="1") 
+
+            if (writerrepo.ValidateLogin(writerobj.Username, writerobj.Password))
             {
                 return RedirectToAction("Dashboard", "Writer");
-
-                //return View("Writer/Dashboard");
 
             }
             else

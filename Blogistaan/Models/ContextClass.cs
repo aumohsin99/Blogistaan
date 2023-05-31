@@ -5,9 +5,9 @@ namespace Blogistaan.Models
 {
     public class ContextClass : DbContext
     {
-        DbSet<Admin> Admins { get; set; }
-        DbSet<Blog> Blogs { get; set; }
-        DbSet<Writer> Writers { get; set; }
+        public DbSet<Admin> Admins { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Writer> Writers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

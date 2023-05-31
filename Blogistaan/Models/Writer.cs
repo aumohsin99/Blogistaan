@@ -13,7 +13,7 @@ namespace Blogistaan.Models
 
         [Required]
         [StringLength(50)]
-        public string? Password { get; set; }
+        public string Password { get; set; }
 
         //[Required]
         //[StringLength(100)]
