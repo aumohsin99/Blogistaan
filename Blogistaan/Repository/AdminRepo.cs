@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Blogistaan.Repository
 {
-    public class WriterRepo
+    public class AdminRepo
     {
         //private ContextClass dbContext;
         //public WriterRepo(ContextClass dbContext)
@@ -16,9 +16,9 @@ namespace Blogistaan.Repository
         ContextClass dbContext= new ContextClass();
 
 
-        public bool ValidateWriterLogin(string username, string password)
+        public bool ValidateAdminLogin(string username, string password)
         {
-            return dbContext.Writers.Any(w => w.Username == username && w.Password == password);
+            return dbContext.Admins.Any(w => w.Username == username && w.Password == password);
 
             //return dbContext.Writers.Any(x => x.Va)
         }

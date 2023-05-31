@@ -7,12 +7,12 @@ namespace Blogistaan.Controllers
 {
     public class LoginController : Controller
     {
-        WriterRepo writerrepo;
+        //WriterRepo writerrepo;
 
-        public LoginController(ContextClass dbContext)
-        {
-            writerrepo = new WriterRepo(dbContext);
-        }
+        //public LoginController(ContextClass dbContext)
+        //{
+        //    writerrepo = new WriterRepo(dbContext);
+        //}
 
 
         [HttpGet]
@@ -26,8 +26,9 @@ namespace Blogistaan.Controllers
         {
 
             // Handle login logic here
-
-            if (writerrepo.ValidateLogin(writerobj.Username, writerobj.Password))
+            //if (writerobj.Username == "w1" && writerobj.Password == "1")
+            var writerrepo = new WriterRepo();
+            if (writerrepo.ValidateWriterLogin(writerobj.Username, writerobj.Password))
             {
                 return RedirectToAction("Dashboard", "Writer");
 
@@ -39,7 +40,6 @@ namespace Blogistaan.Controllers
             }
 
 
-            //return View();
         }
 
         [HttpGet]
@@ -52,15 +52,18 @@ namespace Blogistaan.Controllers
         public IActionResult AdminLogin(Admin adminobj)
         {
 
-            if (adminobj.Username == "a1" && adminobj.Password == "1")
+            var adminrepo = new AdminRepo();
+            if (adminrepo.ValidateAdminLogin(adminobj.Username, adminobj.Password))
             {
                 return RedirectToAction("Dashboard", "Admin");
+
             }
             else
             {
                 return View();
 
             }
+
         }
 
        
