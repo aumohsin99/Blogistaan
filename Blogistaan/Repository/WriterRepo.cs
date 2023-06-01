@@ -16,17 +16,47 @@ namespace Blogistaan.Repository
         ContextClass dbContext= new ContextClass();
 
 
-        public bool ValidateWriterLogin(string username, string password)
-        {
-            return dbContext.Writers.Any(w => w.Username == username && w.Password == password);
+        //public bool ValidateWriterLogin(string username, string password)
+        //{
+        //    return dbContext.Writers.Any(w => w.Username == username && w.Password == password);
 
-            //return dbContext.Writers.Any(x => x.Va)
+        //}
+
+
+        public int ValidateWriterLogin(string username, string password)
+        {
+            var writer = dbContext.Writers.SingleOrDefault(w => w.Username == username && w.Password == password);
+            if (writer != null)
+            {
+                return writer.Id;
+            }
+
+            return 0; 
+            // Or any other value that represents an invalid writer ID
         }
+
+
+
+        public List<Blog> FetchAllBlogsFromWriter(int id)
+        {
+            return dbContext.Blogs.Where(b => b.Author == id).ToList();
+        }
+
 
 
         public List<Blog> FetchAllBlogs()
         {
-            return dbContext.Blogs.ToList();        
+
+            return dbContext.Blogs.ToList();
+        }
+
+
+        public int idForCookies()
+        {
+            int id = 0;
+
+
+            return id;
         }
     }
 }

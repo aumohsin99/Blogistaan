@@ -28,11 +28,22 @@ namespace Blogistaan.Controllers
             // Handle login logic here
             //if (writerobj.Username == "w1" && writerobj.Password == "1")
             var writerrepo = new WriterRepo();
-            if (writerrepo.ValidateWriterLogin(writerobj.Username, writerobj.Password))
+            int id = writerrepo.ValidateWriterLogin(writerobj.Username, writerobj.Password);
+            if (id!=0)
             {
+                HttpContext.Response.Cookies.Append("WriterId", id.ToString());
+
                 return RedirectToAction("Dashboard", "Writer");
 
             }
+            //if (writerrepo.ValidateWriterLogin(writerobj.Username, writerobj.Password) != 0)
+            //{
+            //    //Cookies storage
+            //    HttpContext.Response.Cookies.Append("WriterId", writerobj.Id.ToString());
+                
+            //    return RedirectToAction("Dashboard", "Writer");
+
+            //}
             else
             {
                 return View();

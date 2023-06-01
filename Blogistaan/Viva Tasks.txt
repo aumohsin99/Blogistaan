@@ -1,8 +1,6 @@
 100% Views already done in First Project Viva
 Partial View done in Menu Bar
 
-
-Cookies (state management) TBD
 Layout TBD
 
 Controller (Action Methods)
@@ -12,7 +10,13 @@ EF Pattern (Siginin/Up) only
 
 Remove images, add link of blogs in home page for all blogs
 Avoid showing dashboards without logging in for both admin and writer
-implement cookies in user login to avoid logging in users again during a session
 
-In writer dashboard, only show those blogs that have been written by that writer
-Add name of writer at the end of blog just for demo
+
+Update view to be created
+
+
+return RedirectToAction("Dashboard", "Admin");
+
+
+agar loggedin he user or koi blogs nai hain to dashboard p hi rakho
+or agar loggedin nai he to phr usko redirect kr do login screen p

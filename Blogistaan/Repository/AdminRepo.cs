@@ -29,6 +29,14 @@ namespace Blogistaan.Repository
             return dbContext.Writers.ToList();
         }
 
+        public bool AddWriter(Writer writer)
+        {
+
+            dbContext.Writers.Add(writer);
+            dbContext.SaveChangesAsync();
+            return true;
+            
+        }
 
 
     }

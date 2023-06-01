@@ -47,8 +47,9 @@
 @*                        <img src="@post.ImageUrl" class="card-img-top" alt="...">
 *@                        <div class="card-body">
                             <h5 class="card-title">@post.Title</h5>
-                            <p class="card-text">@post.Content</p>
-                            <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Blog" asp-route-id="@post.Id">Read More</a>
+                            <p class="card-text">@post.ShortDescription</p>
+                            <a class="btn btn-primary" asp-area="" asp-controller="Blog" asp-action="Blog" asp-route-id="@post.Id">Read More</a>
+
                         </div>
                     </div>
                 </div>
@@ -58,46 +59,3 @@
     </div>
 </div>
 
-
-
-
-@*<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2 class="mb-3">Latest Posts Hardcoded</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 mb-3">
-            <div class="card h-100">
-                <img src="https://via.placeholder.com/300x200.png?text=Image+Placeholder" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Post Title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit euismod tortor, ac venenatis nisi lacinia vel.</p>
-     
-                    <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Blog">Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-3">
-            <div class="card h-100">
-                <img src="https://via.placeholder.com/300x200.png?text=Image+Placeholder" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Post Title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit euismod tortor, ac venenatis nisi lacinia vel.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-3">
-            <div class="card h-100">
-                <img src="https://via.placeholder.com/300x200.png?text=Image+Placeholder" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Post Title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit euismod tortor, ac venenatis nisi lacinia vel.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>*@
