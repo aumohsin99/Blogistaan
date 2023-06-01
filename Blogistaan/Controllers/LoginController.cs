@@ -7,13 +7,6 @@ namespace Blogistaan.Controllers
 {
     public class LoginController : Controller
     {
-        //WriterRepo writerrepo;
-
-        //public LoginController(ContextClass dbContext)
-        //{
-        //    writerrepo = new WriterRepo(dbContext);
-        //}
-
 
         [HttpGet]
         public IActionResult WriterLogin()
@@ -25,8 +18,6 @@ namespace Blogistaan.Controllers
         public IActionResult WriterLogin(Writer writerobj)
         {
 
-            // Handle login logic here
-            //if (writerobj.Username == "w1" && writerobj.Password == "1")
             var writerrepo = new WriterRepo();
             int id = writerrepo.ValidateWriterLogin(writerobj.Username, writerobj.Password);
             if (id!=0)
@@ -36,14 +27,7 @@ namespace Blogistaan.Controllers
                 return RedirectToAction("Dashboard", "Writer");
 
             }
-            //if (writerrepo.ValidateWriterLogin(writerobj.Username, writerobj.Password) != 0)
-            //{
-            //    //Cookies storage
-            //    HttpContext.Response.Cookies.Append("WriterId", writerobj.Id.ToString());
-                
-            //    return RedirectToAction("Dashboard", "Writer");
 
-            //}
             else
             {
                 return View();
@@ -64,11 +48,15 @@ namespace Blogistaan.Controllers
         {
 
             var adminrepo = new AdminRepo();
-            if (adminrepo.ValidateAdminLogin(adminobj.Username, adminobj.Password))
+            int id = adminrepo.ValidateAdminLogin(adminobj.Username, adminobj.Password);
+            if (id!=0)
             {
+                HttpContext.Response.Cookies.Append("AdminId", id.ToString());
+
                 return RedirectToAction("Dashboard", "Admin");
 
             }
+
             else
             {
                 return View();

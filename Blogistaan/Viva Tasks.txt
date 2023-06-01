@@ -1,22 +1,10 @@
-100% Views already done in First Project Viva
-Partial View done in Menu Bar
-
-Layout TBD
-
-Controller (Action Methods)
-Repo pattern for DB Tasks (Siginin/Up) action methods in User class only
-EF Pattern (Siginin/Up) only
-
-
-Remove images, add link of blogs in home page for all blogs
-Avoid showing dashboards without logging in for both admin and writer
-
-
-Update view to be created
-
 
 return RedirectToAction("Dashboard", "Admin");
 
+avoid creating two writers with same username
 
-agar loggedin he user or koi blogs nai hain to dashboard p hi rakho
-or agar loggedin nai he to phr usko redirect kr do login screen p
+small line below header of dashboard in writer, fix that
+
+logout implementation
+
+jb writer delete ho jae to uske blogs b delete krwane hain

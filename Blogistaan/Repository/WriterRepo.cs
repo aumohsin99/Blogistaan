@@ -1,26 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Blogistaan.Models;
 using System.Linq;
-
+using Microsoft.AspNetCore.Mvc;
 
 namespace Blogistaan.Repository
 {
     public class WriterRepo
     {
-        //private ContextClass dbContext;
-        //public WriterRepo(ContextClass dbContext)
-        //{
-        //    this.dbContext = dbContext;
-        //}
-        //Writer writerobj = new Writer();
+      
         ContextClass dbContext= new ContextClass();
-
-
-        //public bool ValidateWriterLogin(string username, string password)
-        //{
-        //    return dbContext.Writers.Any(w => w.Username == username && w.Password == password);
-
-        //}
 
 
         public int ValidateWriterLogin(string username, string password)
@@ -51,12 +39,57 @@ namespace Blogistaan.Repository
         }
 
 
-        public int idForCookies()
+
+        public bool SaveBlog(Blog blog)
         {
-            int id = 0;
+
+            dbContext.Blogs.Add(blog);
+            //dbContext.Blogs.up
+            dbContext.SaveChangesAsync();
+            //dbContext.SaveChanges();
+            return true;
+        }
 
 
-            return id;
+        public bool DeleteBlog(int id)
+        {
+            var blog = dbContext.Blogs.Find(id);
+            if (blog != null)
+            {
+                dbContext.Blogs.Remove(blog);
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+
+        }
+
+        public Blog FetchBlogbyID(int id)
+        {
+
+            var blog = dbContext.Blogs.FirstOrDefault(w => w.Id == id);
+            if (blog != null)
+            {
+                return blog;
+
+            }
+            else
+                return blog;
+
+        }
+
+        public bool SaveUpdatedBlog(Blog blog)
+        {
+            var blog1 = dbContext.Blogs.FirstOrDefault(w => w.Id == blog.Id);
+
+            // Update the properties of the retrieved blog with the new values
+            blog1.Title = blog.Title;
+            blog1.ShortDescription = blog.ShortDescription;
+            blog1.Content = blog.Content;
+
+            // Save the changes to the database
+            dbContext.SaveChanges();
+            return true;
         }
     }
 }

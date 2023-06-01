@@ -16,10 +16,15 @@ namespace Blogistaan.Repository
         ContextClass dbContext= new ContextClass();
 
 
-        public bool ValidateAdminLogin(string username, string password)
+        public int ValidateAdminLogin(string username, string password)
         {
-            return dbContext.Admins.Any(w => w.Username == username && w.Password == password);
+            var admin = dbContext.Admins.SingleOrDefault(w => w.Username == username && w.Password == password);
 
+            if (admin!= null)
+            {
+                return admin.Id;
+            }
+            return 0;
             //return dbContext.Writers.Any(x => x.Va)
         }
 
@@ -36,6 +41,48 @@ namespace Blogistaan.Repository
             dbContext.SaveChangesAsync();
             return true;
             
+        }
+
+        public bool DeleteWriter(int id)
+        {
+            var writer = dbContext.Writers.Find(id);
+            if (writer != null)
+            {
+                dbContext.Writers.Remove(writer);
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+
+        }
+
+
+        public Writer FetchWriterbyID(int id)
+        {
+
+            var writer = dbContext.Writers.FirstOrDefault(w => w.Id == id);
+            if (writer != null)
+            {
+                return writer;
+
+            }
+            else
+                return writer;
+
+        }
+
+        public bool SaveUpdatedWriter(Writer writer)
+        {
+            var writer1 = dbContext.Writers.FirstOrDefault(w => w.Id == writer.Id);
+
+            // Update the properties of the retrieved blog with the new values
+            writer1.Username = writer.Username;
+            writer1.Password = writer.Password;
+            //blog1.Content = blog.Content;
+
+            // Save the changes to the database
+            dbContext.SaveChanges();
+            return true;
         }
 
 

@@ -36,9 +36,27 @@
                                 <th>@writer.Password</th>
 
                                 <td>
+                                    @using (Html.BeginForm("UpdateWriter", "Admin", new { id = writer.Id }, FormMethod.Post))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                    }
+                                </td>
+
+
+                                <td>
+                                    @using (Html.BeginForm("DeleteWriter", "Admin", new { id = writer.Id }, FormMethod.Post))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    }
+                                </td>
+
+
+                                @*<td>
                                     <a href="@Url.Action("UpdateWriter", "Admin", new { id = writer.Id })" class="btn btn-primary">Update</a>
                                     <a href="@Url.Action("DeleteWriter", "Admin", new { id = writer.Id })" class="btn btn-danger">Delete</a>
-                                </td>
+                                </td>*@
                             </tr>
                         }
 

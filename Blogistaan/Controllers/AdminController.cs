@@ -10,10 +10,25 @@ namespace Blogistaan.Controllers
         [HttpGet]
         public IActionResult Dashboard()
         {
-            var adminrepo = new AdminRepo();
-            var listofWriters = adminrepo.FetchAllWriters();
+            if (HttpContext.Request.Cookies.TryGetValue("AdminId", out string AdminIdString))
+            {
+                if (int.TryParse(AdminIdString, out int AdminId))
+                {
+                    var adminrepo = new AdminRepo();
+                    var listofWriters = adminrepo.FetchAllWriters();
 
-            return View(listofWriters);
+                    return View(listofWriters);
+                }
+                else
+                {
+                    return View();
+                }
+
+            }
+            else
+            {
+                return RedirectToAction("AdminLogin", "Login");
+            }           
         }
 
         [HttpGet]
@@ -57,18 +72,55 @@ namespace Blogistaan.Controllers
             //return View(listofWriters);
 
             // Optionally, you can redirect to a different action or view after adding the writer
-            return RedirectToAction("Dashboard", "Admin");
+            //return RedirectToAction("Dashboard", "Admin");
         }
 
 
-        public IActionResult UpdateWriter()
+
+        [HttpPost]
+        public IActionResult DeleteWriter(int id)
         {
+
+            var adminrepo = new AdminRepo();
+            if (adminrepo.DeleteWriter(id))
+            {
+                return RedirectToAction("Dashboard", "Admin");
+
+            }
+            //writerrepo.DeleteBlog(id);
+
             return View();
+
+        }
+        public IActionResult UpdateWriter(int id)
+        {
+            var adminrepo = new AdminRepo();
+            var writer = adminrepo.FetchWriterbyID(id);
+
+
+            //var blog = dbContext.Blogs.FirstOrDefault(b => b.Id == id);
+            if (writer == null)
+            {
+                return NotFound(); // Handle the case when the blog with the specified ID is not found
+            }
+
+            return View(writer);
         }
 
-        public IActionResult DeleteWriter()
+        [HttpPost]
+        public IActionResult SaveUpdatedWriter(Writer updatedWriter)
         {
+            var adminrepo = new AdminRepo();
+            if (adminrepo.SaveUpdatedWriter(updatedWriter))
+            //if (writerrepo.DeleteBlog(id))
+            {
+                return RedirectToAction("Dashboard", "Admin");
+
+            }
             return View();
+
         }
+
+
     }
 }

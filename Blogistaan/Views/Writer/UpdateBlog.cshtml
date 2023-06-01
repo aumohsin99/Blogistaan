@@ -1,14 +1,14 @@
 ﻿@model Blogistaan.Models.Blog
 
 @{
-    ViewBag.Title = "Add New Blog";
+    ViewBag.Title = "Update Blog";
 }
 
 <div class="container">
-    <h2>Add New Blog</h2>
-    @using (Html.BeginForm("WriteBlog", "Writer", FormMethod.Post, new { @class = "form-horizontal" }))
+    <h2>Update Blog</h2>
+    @using (Html.BeginForm("SaveUpdatedBlog", "Writer", FormMethod.Post, new { @class = "form-horizontal" }))
     {
-        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.Id)
 
         <div class="form-group">
             @Html.LabelFor(m => m.Title, new { @class = "control-label col-md-2" })
@@ -17,6 +17,9 @@
                 @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        <!-- Add other fields for ShortDescription, Content, etc. as needed -->
+
 
         <div class="form-group">
             @Html.LabelFor(m => m.ShortDescription, new { @class = "control-label col-md-2" })
