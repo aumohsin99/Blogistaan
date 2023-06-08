@@ -8,3 +8,22 @@ small line below header of dashboard in writer, fix that
 logout implementation
 
 jb writer delete ho jae to uske blogs b delete krwane hain
+
+
+
+Next Viva
+
+20 Entity framework 
+10 View component
+
+15 Signal R
+
+
+Below marks 20
+
+Views 100%
+Controller 100%
+
+Partial view atleast 1
+Layout page 1
+State management

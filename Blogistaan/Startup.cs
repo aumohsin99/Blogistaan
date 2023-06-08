@@ -1,43 +1,63 @@
 ﻿using Blogistaan.Models;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-
-using Microsoft.AspNetCore.Hosting;
-
-//namespace Blogistaan
-//{
-//    public class Startup
-//    {
-//        public void Configure(IApplicationBuilder app)
-//        {
-//            // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-//        }
-//    }
-//}
-
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.SignalR;
+
+using Microsoft.AspNetCore.Mvc;
 
 namespace Blogistaan
 {
     public class Startup
     {
+        private readonly IConfiguration _configuration;
+
+        public Startup(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
-            // Register the ContextClass as a service
+
             services.AddDbContext<ContextClass>(options =>
                 options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BlogistaanDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"));
+
 
             // Other service registrations
 
             services.AddMvc();
+            services.AddSignalR();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // Configuration and other middleware setup
-            app.UseMvc();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapHub<ChatHub>("/chatHub");
+            });
         }
     }
 }
