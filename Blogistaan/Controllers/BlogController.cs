@@ -14,7 +14,12 @@ namespace Blogistaan.Controllers
         {
             //var blogrepo = new BlogRepo();
             //var blog = blogrepo.BlogRead(id);
+
+
+
             return ViewComponent(typeof(BlogViewComponent), id);
+
+            //return View();
         }
 
     }

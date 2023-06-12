@@ -1,13 +1,26 @@
-﻿@*@model Blog
+﻿@using Blogistaan.ViewComponents;
+
+@model Blog
 
 @{
     ViewData["Title"] = "Blog";
 }
 
-@{
+@*@{
     ViewBag.Title = Model.Title; // Set the blog post title dynamically
-}
+}*@
 
+
+@*@await Component.InvokeAsync(typeof(BlogViewComponent), )
+
+<div>
+    <vc:blog></vc:blog>
+
+</div>*@
+
+
+
+@*
 <div class="container my-5">
     <div class="row">
         <div class="col-md-8">
