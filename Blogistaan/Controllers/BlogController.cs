@@ -12,14 +12,14 @@ namespace Blogistaan.Controllers
         [HttpGet]
         public IActionResult Blog(int id)
         {
-            //var blogrepo = new BlogRepo();
-            //var blog = blogrepo.BlogRead(id);
+            var blogrepo = new BlogRepo();
+            var blog = blogrepo.BlogRead(id);
 
 
 
             return ViewComponent(typeof(BlogViewComponent), id);
 
-            //return View();
+            //return View(blog);
         }
 
     }
