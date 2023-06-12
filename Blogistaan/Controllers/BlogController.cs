@@ -1,4 +1,5 @@
 ﻿using Blogistaan.Repository;
+using Blogistaan.ViewComponents;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -11,11 +12,11 @@ namespace Blogistaan.Controllers
         [HttpGet]
         public IActionResult Blog(int id)
         {
-            var blogrepo = new BlogRepo();
-            var blog = blogrepo.BlogRead(id);
-
-            return View(blog);
+            //var blogrepo = new BlogRepo();
+            //var blog = blogrepo.BlogRead(id);
+            return ViewComponent(typeof(BlogViewComponent), id);
         }
+
     }
 }
 

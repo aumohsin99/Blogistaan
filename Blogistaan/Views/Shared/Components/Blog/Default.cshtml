@@ -1,7 +1,10 @@
-﻿@*@model Blog
+﻿
+@model Blog
 
 @{
-    ViewData["Title"] = "Blog";
+    //ViewData["Title"] = "Blog";
+    ViewData["Title"] = Model.Title;
+
 }
 
 @{
@@ -20,10 +23,10 @@
             <h1>Blog Content</h1>
             <p>@Model.Content</p>
         </div>
+
     </div>
 
     <div class="d-flex justify-content-center mt-4">
         <a href="#" class="btn btn-primary" onclick="history.back()">Back</a>
     </div>
-
-</div>*@
+</div>
