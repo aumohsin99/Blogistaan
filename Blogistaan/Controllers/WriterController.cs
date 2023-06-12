@@ -36,6 +36,21 @@ namespace Blogistaan.Controllers
 
         }
 
+
+        [HttpPost]
+        public IActionResult Logout()
+        {
+            if (Request.Cookies.ContainsKey("WriterId"))
+            {
+                Response.Cookies.Delete("WriterId");
+            }
+
+            //return RedirectToAction("Index", "Home");
+
+            return RedirectToAction("WriterLogin", "Login");
+        }
+
+
         [HttpGet]
         public IActionResult WriteBlog()
         {

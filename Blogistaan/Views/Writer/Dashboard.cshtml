@@ -1,8 +1,23 @@
 ﻿@model List<Blog>
 
+@using Microsoft.AspNetCore.Http
+
+
 @{
     ViewBag.Title = "Writer Dashboard";
 }
+
+@{
+    bool isWriterLoggedIn = Context.Request.Cookies.ContainsKey("WriterId");
+}
+
+@if (isWriterLoggedIn)
+{
+    <form method="post" action="/Writer/Logout">
+        <button type="submit">Logout</button>
+    </form>
+}
+
 
 <div class="container">
     <div class="row">
