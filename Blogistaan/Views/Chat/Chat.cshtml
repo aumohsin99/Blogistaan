@@ -1,4 +1,4 @@
-﻿@{
+﻿@*@{
     ViewBag.Title = "Chat Room";
 }
 
@@ -17,26 +17,37 @@
     <script src="~/js/chat.js"></script>
 
     <script>
-        $(function () {
-            var chat = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
-            chat.on("receiveMessage", function (user, message) {
-                // Append the message to the chatMessages list
-                $('#chatMessages').append('<li><strong>' + user + '</strong>: ' + message + '</li>');
-            });
-
-            chat.start().then(function () {
-                $('#sendButton').click(function () {
-                    var user = $('#username').val();
-                    var message = $('#message').val();
-
-                    chat.invoke("sendMessage", user, message);
-
-                    $('#message').val('').focus();
-                });
-            }).catch(function (err) {
-                console.error(err.toString());
-            });
-        });
     </script>
 }
+*@
+
+
+@page
+<div class="container">
+	<div class="row p-1">
+		<div class="col-1">User</div>
+		<div class="col-5"><input type="text" id="userInput" /></div>
+	</div>
+	<div class="row p-1">
+		<div class="col-1">Message</div>
+		<div class="col-5"><input type="text" class="w-100" id="messageInput" /></div>
+	</div>
+	<div class="row p-1">
+		<div class="col-6 text-end">
+			<input type="button" id="sendButton" value="Send Message" />
+		</div>
+	</div>
+	<div class="row p-1">
+		<div class="col-6">
+			<hr />
+		</div>
+	</div>
+	<div class="row p-1">
+		<div class="col-6">
+			<ul id="messagesList"></ul>
+		</div>
+	</div>
+</div>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/site.js"></script>

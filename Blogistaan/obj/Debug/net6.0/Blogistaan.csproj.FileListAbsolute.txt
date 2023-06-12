@@ -85,7 +85,4 @@ D:\Web Tasks\Blogistaan\Blogistaan\obj\Debug\net6.0\refint\Blogistaan.dll
 D:\Web Tasks\Blogistaan\Blogistaan\obj\Debug\net6.0\Blogistaan.pdb
 D:\Web Tasks\Blogistaan\Blogistaan\obj\Debug\net6.0\Blogistaan.genruntimeconfig.cache
 D:\Web Tasks\Blogistaan\Blogistaan\obj\Debug\net6.0\ref\Blogistaan.dll
-D:\Web Tasks\Blogistaan\Blogistaan\bin\Debug\net6.0\Microsoft.Owin.dll
-D:\Web Tasks\Blogistaan\Blogistaan\bin\Debug\net6.0\Newtonsoft.Json.dll
-D:\Web Tasks\Blogistaan\Blogistaan\bin\Debug\net6.0\Owin.dll
-D:\Web Tasks\Blogistaan\Blogistaan\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\Web Tasks\Blogistaan\Blogistaan\bin\Debug\net6.0\libman.json
