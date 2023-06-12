@@ -2,10 +2,8 @@ avoid creating two writers with same username
 
 small line below header of dashboard in writer, fix that
 
-logout implementation
 
 jb writer delete ho jae to uske blogs b delete krwane hain
-
 
 
 

@@ -13,8 +13,18 @@
 
 @if (isWriterLoggedIn)
 {
-    <form method="post" action="/Writer/Logout">
-        <button type="submit">Logout</button>
+    <style>
+    .top-right 
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
+    }
+    </style>
+
+    <form method="post" action="/Writer/Logout" class="top-right">
+        <button type="submit" class="btn btn-primary">Logout</button>
     </form>
 }
 
@@ -22,11 +32,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-@*            <h2>Welcome, @User.Identity.Name!</h2>
-*@    
+ 
             <h2>Welcome, Writer!</h2>
 
-</div>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-12">

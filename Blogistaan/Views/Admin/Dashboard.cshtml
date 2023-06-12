@@ -4,6 +4,28 @@
     ViewBag.Title = "Admin Dashboard";
 }
 
+@{
+    bool isAdminLoggedIn = Context.Request.Cookies.ContainsKey("AdminId");
+}
+
+@if (isAdminLoggedIn)
+{
+     <style>
+    .top-right 
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
+    }
+    </style>
+
+    <form method="post" action="/Admin/Logout" class="top-right">
+        <button type="submit" class="btn btn-primary">Logout</button>
+    </form>
+
+}
+
 <div class="container">
     <h2>Admin Dashboard</h2>
     <p>Here you can manage all the writers for your blog site:</p>
