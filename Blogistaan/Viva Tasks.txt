@@ -1,26 +1,13 @@
+
+Create a button at blog reading page where reader can send a text to the writer of blog
+
+
 avoid creating two writers with same username
 
 small line below header of dashboard in writer, fix that
 
 
 jb writer delete ho jae to uske blogs b delete krwane hain
-
-
-
-20 Entity framework 
-10 View component
-
-15 Signal R
-
-
-Below marks 20
-
-Views 100%
-Controller 100%
-
-Partial view atleast 1
-Layout page 1
-State management
 
 
 return RedirectToAction("Dashboard", "Admin");
