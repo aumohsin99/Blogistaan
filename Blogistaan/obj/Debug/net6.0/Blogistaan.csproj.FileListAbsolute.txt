@@ -1,5 +1,6 @@
 D:\Web Tasks\Blogistaan\Blogistaan\bin\Debug\net6.0\appsettings.Development.json
 D:\Web Tasks\Blogistaan\Blogistaan\bin\Debug\net6.0\appsettings.json
+D:\Web Tasks\Blogistaan\Blogistaan\bin\Debug\net6.0\libman.json
 D:\Web Tasks\Blogistaan\Blogistaan\bin\Debug\net6.0\Blogistaan.staticwebassets.runtime.json
 D:\Web Tasks\Blogistaan\Blogistaan\bin\Debug\net6.0\Blogistaan.exe
 D:\Web Tasks\Blogistaan\Blogistaan\bin\Debug\net6.0\Blogistaan.deps.json
@@ -85,4 +86,3 @@ D:\Web Tasks\Blogistaan\Blogistaan\obj\Debug\net6.0\refint\Blogistaan.dll
 D:\Web Tasks\Blogistaan\Blogistaan\obj\Debug\net6.0\Blogistaan.pdb
 D:\Web Tasks\Blogistaan\Blogistaan\obj\Debug\net6.0\Blogistaan.genruntimeconfig.cache
 D:\Web Tasks\Blogistaan\Blogistaan\obj\Debug\net6.0\ref\Blogistaan.dll
-D:\Web Tasks\Blogistaan\Blogistaan\bin\Debug\net6.0\libman.json

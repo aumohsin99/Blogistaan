@@ -72,17 +72,6 @@ namespace Blogistaan.Controllers
             else
                 return View();
 
-            //adminrepo.AddWriter(writer);
-
-            // Add the new writer to the database context
-            //dbContext.Writers.Add(writer);
-            //adminrepo.SaveChanges();
-
-
-
-
-
-
             //return View(listofWriters);
 
             // Optionally, you can redirect to a different action or view after adding the writer

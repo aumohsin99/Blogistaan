@@ -24,6 +24,7 @@ namespace Blogistaan.Models
         public DateTime DatePublished { get; set; }
 
         public int Author { get; set; }
+        //public string AuthorName { get; set; }
 
 
     }

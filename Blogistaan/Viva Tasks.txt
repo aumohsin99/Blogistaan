@@ -7,7 +7,4 @@ avoid creating two writers with same username
 small line below header of dashboard in writer, fix that
 
 
-jb writer delete ho jae to uske blogs b delete krwane hain
-
-
 return RedirectToAction("Dashboard", "Admin");

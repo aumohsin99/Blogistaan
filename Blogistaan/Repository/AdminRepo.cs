@@ -36,6 +36,9 @@ namespace Blogistaan.Repository
 
         public bool AddWriter(Writer writer)
         {
+            var writerFound = dbContext.Writers.Find();
+
+
 
             dbContext.Writers.Add(writer);
             dbContext.SaveChangesAsync();
@@ -46,13 +49,24 @@ namespace Blogistaan.Repository
         public bool DeleteWriter(int id)
         {
             var writer = dbContext.Writers.Find(id);
+            int writerID = writer.Id;
+            //var blogs = dbContext.Blogs.Find(writerID);
             if (writer != null)
             {
                 dbContext.Writers.Remove(writer);
+/*                dbContext.Blogs.Remove(writerID);*/
+                var pBlogs = dbContext.Blogs.Where(b => b.Author == writer.Id).ToList();
+                foreach (var item in pBlogs)
+                {
+                    dbContext.Blogs.Remove(item);
+                }
+
                 dbContext.SaveChanges();
                 return true;
             }
             return false;
+
+
 
         }
 

@@ -7,6 +7,10 @@ namespace Blogistaan.Models
     {
         public int Id { get; set; }
 
+        //[Required]
+        //[StringLength(50)]
+        //public string WriterName { get; set; }
+
         [Required]
         [StringLength(50)]
         public string Username { get; set; }
