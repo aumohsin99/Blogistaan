@@ -13,7 +13,6 @@ connection.on("ReceiveMessage", function (user, message) {
     // should be aware of possible script injection concerns.
     li.textContent = `${user} says ${message}`;
 });
-
 connection.start().then(function () {
     document.getElementById("sendButton").disabled = false;
 }).catch(function (err) {

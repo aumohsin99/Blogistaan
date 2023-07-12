@@ -1,3 +1,4 @@
+error message if login is not successful
 
 Create a button at blog reading page where reader can send a text to the writer of blog
 
@@ -8,3 +9,6 @@ small line below header of dashboard in writer, fix that
 
 
 return RedirectToAction("Dashboard", "Admin");
+
+
+Change this code in such a way that writerOnline is set using cookies, if there's writerID stored in cookies, then set it true otherwise keep is false. Also check if the right writer is logged in or someone else is online.
