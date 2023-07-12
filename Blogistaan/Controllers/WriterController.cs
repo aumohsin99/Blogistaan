@@ -81,7 +81,7 @@ namespace Blogistaan.Controllers
             if (HttpContext.Request.Cookies.TryGetValue("WriterId", out string writerIdString))
             {
                 if (int.TryParse(writerIdString, out int writerId))
-                {
+                { 
                     var blog = new Blog
                     {
                         Title = title,
@@ -90,6 +90,36 @@ namespace Blogistaan.Controllers
                         DatePublished = DateTime.Now,
                         Author = writerId
                     };
+
+                    //if (string.IsNullOrWhiteSpace(title))
+                    //{
+                    //    ModelState.AddModelError("Title", "The Title field is required.");
+                    //}
+
+                    //if (string.IsNullOrWhiteSpace(shortdescription))
+                    //{
+                    //    ModelState.AddModelError("ShortDescription", "The Short Description field is required.");
+                    //}
+
+                    //if (string.IsNullOrWhiteSpace(content))
+                    //{
+                    //    ModelState.AddModelError("Content", "The Content field is required.");
+                    //}
+
+                    //if (!ModelState.IsValid)
+                    //{
+                    //    ViewBag.ErrorMessages = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+                    //    return View(blog);
+                    //}
+
+                    //var blog = new Blog
+                    //{
+                    //    Title = title,
+                    //    ShortDescription = shortdescription,
+                    //    Content = content,
+                    //    DatePublished = DateTime.Now,
+                    //    Author = writerId
+                    //};
 
                     var writerrepo = new WriterRepo();
                     if (writerrepo.SaveBlog(blog))

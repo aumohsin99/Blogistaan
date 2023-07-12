@@ -7,21 +7,16 @@ namespace Blogistaan.Models
     {
         public int Id { get; set; }
 
-        //[Required]
-        //[StringLength(50)]
-        //public string WriterName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Username is required")]
         [StringLength(50)]
         public string Username { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Password is required")]
         [StringLength(50)]
         public string Password { get; set; }
 
-        //[Required]
-        //[StringLength(100)]
-        //public string Email { get; set; }
+
     }
 
 }

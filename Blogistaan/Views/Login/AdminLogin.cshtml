@@ -1,12 +1,5 @@
 ﻿@model Blogistaan.Models.Admin
 
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
-
 @{
     ViewBag.Title = "Admin Login";
 }
@@ -15,22 +8,25 @@
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h2>Admin Login</h2>
+            @if (ViewBag.InvalidCredentials == true)
+            {
+                <div class="alert alert-danger">Invalid credentials. Please try again.</div>
+            }
             @Html.ValidationSummary()
             @using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post, new { @class = "form" }))
             {
                 <div class="form-group">
                     @Html.LabelFor(m => m.Username)
-                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control", required = "required" })
                     @Html.ValidationMessageFor(m => m.Username)
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.Password)
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", required = "required" })
                     @Html.ValidationMessageFor(m => m.Password)
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
                 <a href="@Url.Action("WriterLogin", "Login")" class="btn btn-link">Writer Login</a>
-
             }
         </div>
     </div>

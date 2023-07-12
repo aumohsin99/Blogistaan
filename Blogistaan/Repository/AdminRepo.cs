@@ -36,7 +36,7 @@ namespace Blogistaan.Repository
 
         public bool AddWriter(Writer writer)
         {
-            var writerFound = dbContext.Writers.Find();
+            //var writerFound = dbContext.Writers.Find();
 
 
 

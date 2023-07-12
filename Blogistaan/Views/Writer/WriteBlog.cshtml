@@ -11,9 +11,10 @@
         @Html.AntiForgeryToken()
 
         <div class="form-group">
+
             @Html.LabelFor(m => m.Title, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(m => m.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(m => m.Title, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -40,4 +41,16 @@
             </div>
         </div>
     }
+
+   @* @if (ViewBag.ErrorMessages != null)
+    {
+        <div class="alert alert-danger">
+            <ul>
+                @foreach (var error in ViewBag.ErrorMessages)
+                {
+                    <li>@error</li>
+                }
+            </ul>
+        </div>
+    }*@
 </div>

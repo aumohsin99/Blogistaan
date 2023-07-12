@@ -8,15 +8,16 @@ namespace Blogistaan.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The Title field is required.")]
         [StringLength(100)]
         public string Title { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The Short Description field is required.")]
         [StringLength(500)]
         public string ShortDescription { get; set; }
 
-        [Required]
+
+        [Required(ErrorMessage = "The Content field is required.")]
         [StringLength(5000)]
         public string Content { get; set; }
 
@@ -24,10 +25,6 @@ namespace Blogistaan.Models
         public DateTime DatePublished { get; set; }
 
         public int Author { get; set; }
-        //public string AuthorName { get; set; }
-
-
     }
-
 
 }

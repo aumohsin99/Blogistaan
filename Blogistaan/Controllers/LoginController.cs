@@ -18,6 +18,15 @@ namespace Blogistaan.Controllers
         public IActionResult WriterLogin(Writer writerobj)
         {
 
+            // Your login validation logic
+
+            //if (loginSuccess)
+            //{
+            //    // Successful login logic
+            //    return RedirectToAction("Index", "Home");
+            //}
+           
+
             var writerrepo = new WriterRepo();
             int id = writerrepo.ValidateWriterLogin(writerobj.Username, writerobj.Password);
             if (id!=0)
@@ -30,7 +39,10 @@ namespace Blogistaan.Controllers
 
             else
             {
+                ViewBag.InvalidCredentials = true;
+                //ModelState.AddModelError("", "Invalid credentials. Please try again.");
                 return View();
+                //return View();
 
             }
 
@@ -56,9 +68,13 @@ namespace Blogistaan.Controllers
                 return RedirectToAction("Dashboard", "Admin");
 
             }
+            
 
             else
             {
+                ViewBag.InvalidCredentials = true;
+                //ModelState.AddModelError("", "Invalid credentials. Please try again.");
+                //return View(admin);
                 return View();
 
             }
